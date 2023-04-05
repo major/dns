@@ -17,7 +17,6 @@ var FASTMAIL_DKIM = function (the_domain) {
     ]
 }
 
-// Example domain where the CF proxy abides by the default (off).
 D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     ALIAS("@", "dppzfofnt5y9n.cloudfront.net.", CF_PROXY_OFF),
     TXT('_e6e00522b262580d125eda419b2bf2a3', '_6241c4cde2128f9cc4cf436bc4d69f12.kdbplsmznr.acm-validations.aws'),
@@ -25,4 +24,9 @@ D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     TXT('_dmarc', 'v=DMARC1; p=none; rua=mailto:d978cefa8ddd442a83ed8515c20646db@dmarc-reports.cloudflare.net;'),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("major.io")
+);
+
+D("w5wut.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
+    A("@", "192.168.1.1", CF_PROXY_ON),
+    CF_REDIRECT("*w5wut.com/*", "https://major.io/w5wut/")
 );
