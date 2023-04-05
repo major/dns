@@ -1,0 +1,28 @@
+name: Preview
+
+on: pull_request
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: DNSControl preview
+        uses: koenrh/dnscontrol-action@v3
+        id: dnscontrol_preview
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        with:
+          args: preview
+
+      - name: Preview pull request comment
+        uses: unsplash/comment-on-pr@v1.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: |
+            ```
+            ${{ steps.dnscontrol_preview.outputs.preview_comment }}
+            ```
+          check_for_duplicate_msg: true
