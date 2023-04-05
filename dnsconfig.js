@@ -31,6 +31,18 @@ D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     FASTMAIL_DKIM("major.io")
 );
 
+D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
+    A("@", "103.168.172.37", CF_PROXY_ON),
+    A("@", "103.168.172.52", CF_PROXY_ON),
+    A("*", "103.168.172.37", CF_PROXY_ON),
+    A("*", "103.168.172.52", CF_PROXY_ON),
+    CNAME("firewall", "e1f20e95ee72.sn.mynetname.net."),
+    TXT("default._bimi", "v=BIMI1;l=https://mhtx.net/cowboy-hat-face.svg;a="),
+    TXT('_dmarc', 'v=DMARC1;  p=none; rua=mailto:5de49ed820ef403faf1ca9b3593f6e9e@dmarc-reports.cloudflare.net'),
+    FASTMAIL_RECORDS,
+    FASTMAIL_DKIM("mhtx.net")
+);
+
 D("w5wut.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     A("@", "1.2.3.4", CF_PROXY_ON),
     A("*", "1.2.3.4", CF_PROXY_ON),
