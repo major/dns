@@ -27,6 +27,7 @@ D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     TXT('_e6e00522b262580d125eda419b2bf2a3', '_6241c4cde2128f9cc4cf436bc4d69f12.kdbplsmznr.acm-validations.aws'),
     TXT('_github-pages-challenge-major', '5ac40cc1b766ec2929e0de23035406'),
     TXT('_github-pages-challenge-major.t4r', '54cd4b87c8c881dd40743807d4745e'),
+    CNAME('t4r', 'major.github.io.'),
     TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:d978cefa8ddd442a83ed8515c20646db@dmarc-reports.cloudflare.net;'),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("major.io")
