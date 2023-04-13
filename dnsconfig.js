@@ -47,8 +47,8 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 
 D("tootchute.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     A("@", "5.161.181.52"),
-    A("*", "5.161.181.52"),
-    CNAME("s", "f001.backblazeb2.com."),
+    // A("*", "5.161.181.52"),
+    CNAME("tootfiles", "f001.backblazeb2.com.", CF_PROXY_ON),
     SPF_NO_MX
 );
 
