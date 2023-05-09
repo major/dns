@@ -43,6 +43,8 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     CNAME("firewall", "he708y0f0sr.sn.mynetname.net."),
     TXT("default._bimi", "v=BIMI1;l=https://mhtx.net/cowboy-hat-face.svg;a="),
     TXT('_dmarc', 'v=DMARC1;  p=reject; rua=mailto:5de49ed820ef403faf1ca9b3593f6e9e@dmarc-reports.cloudflare.net'),
+    // postmaster.google.com verification
+    TXT("@", "google-site-verification=q1rSmvpqOMTZ2dczLgHVb5qqWtgOFYIFcwMgPHEQaps"),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("mhtx.net")
 );
