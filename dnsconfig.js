@@ -42,7 +42,10 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     A("hetzner", "5.161.210.54"),
     CNAME("firewall", "he708y0f0sr.sn.mynetname.net."),
     TXT("default._bimi", "v=BIMI1;l=https://mhtx.net/cowboy-hat-face.svg;a="),
-    TXT('_dmarc', 'v=DMARC1;  p=reject; rua=mailto:5de49ed820ef403faf1ca9b3593f6e9e@dmarc-reports.cloudflare.net'),
+    TXT('_dmarc', 'v=DMARC1;  p=none; rua=mailto:5de49ed820ef403faf1ca9b3593f6e9e@dmarc-reports.cloudflare.net'),
+    // SPF records to include Fedora mailing lists
+    TXT('@', 'v=spf1 include:_spfcf1.mhtx.net include:spf.messagingengine.com -all'),
+    TXT('_spfcf1', 'v=spf1 ip4:38.145.60.11 ip4:38.145.60.12  -all'),
     // postmaster.google.com verification
     TXT("@", "google-site-verification=q1rSmvpqOMTZ2dczLgHVb5qqWtgOFYIFcwMgPHEQaps"),
     FASTMAIL_RECORDS,
