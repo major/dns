@@ -52,6 +52,12 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     FASTMAIL_DKIM("mhtx.net")
 );
 
+D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
+    CNAME("@", "majors-test.ghost.io.", CF_PROXY_ON),
+    CNAME("www", "majors-test.ghost.io.", CF_PROXY_ON),
+    SPF_NO_MX
+);
+
 D("tootchute.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     A("@", "5.161.181.52"),
     // A("*", "5.161.181.52"),
