@@ -53,7 +53,7 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 );
 
 D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
-    CNAME("@", "majors-test.ghost.io.", CF_PROXY_ON),
+    ALIAS("@", "majors-test.ghost.io.", CF_PROXY_ON),
     CNAME("www", "majors-test.ghost.io.", CF_PROXY_ON),
     SPF_NO_MX
 );
