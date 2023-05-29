@@ -12,7 +12,6 @@ var FASTMAIL_RECORDS = [
     MX('@', 20, 'in2-smtp.messagingengine.com.'),
     MX('*', 10, 'in1-smtp.messagingengine.com.'),
     MX('*', 20, 'in2-smtp.messagingengine.com.'),
-    TXT("@", "v=spf1 include:spf.messagingengine.com -all")
 ]
 var FASTMAIL_DKIM = function (the_domain) {
     return [
@@ -29,6 +28,7 @@ D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     TXT('_github-pages-challenge-major.t4r', '54cd4b87c8c881dd40743807d4745e'),
     CNAME('t4r', 'toyota-inventory.pages.dev.', CF_PROXY_ON),
     TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:d978cefa8ddd442a83ed8515c20646db@dmarc-reports.cloudflare.net;'),
+    TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("major.io")
 );
@@ -53,9 +53,12 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 );
 
 D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
-    ALIAS("@", "majors-test.ghost.io.", CF_PROXY_ON),
-    A("www", "178.128.137.126.", CF_PROXY_ON),
-    SPF_NO_MX
+    A("@", "178.128.137.126"),
+    CNAME("www", "thetanerd.ghost.io."),
+    TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
+    TXT("_dmarc", "v=DMARC1; p=none"),
+    FASTMAIL_RECORDS,
+    FASTMAIL_DKIM("thetanerd.com")
 );
 
 D("tootchute.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
