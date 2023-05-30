@@ -1,3 +1,7 @@
+DEFAULTS(
+    DefaultTTL("300")
+);
+
 var REG_NONE = NewRegistrar("none");
 var DSP_CLOUDFLARE = NewDnsProvider("cloudflare", { "manage_redirects": true });
 
@@ -29,6 +33,7 @@ D("major.io", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     CNAME('t4r', 'toyota-inventory.pages.dev.', CF_PROXY_ON),
     TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:d978cefa8ddd442a83ed8515c20646db@dmarc-reports.cloudflare.net;'),
     TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
+    TXT("@", "google-site-verification=tCM6cfzWPV6wZ2RZ9aFzZe1dl2TBGjYXjdTz1K8WUNU"),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("major.io")
 );
@@ -53,9 +58,9 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 );
 
 D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
-    A("@", "178.128.137.126"),
-    CNAME("www", "thetanerd.ghost.io."),
+    ALIAS("@", "thetanerd-com.pages.dev.", CF_PROXY_ON),
     TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
+    TXT("@", "google-site-verification=mycVLMWJTjw_mHgmbZNISWAhPKpzBozyQpOHArhkUAY"),
     TXT("_dmarc", "v=DMARC1; p=none"),
     FASTMAIL_RECORDS,
     FASTMAIL_DKIM("thetanerd.com")
