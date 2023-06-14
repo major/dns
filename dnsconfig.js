@@ -59,8 +59,11 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 );
 
 D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
-    ALIAS("@", "thetanerd-com.pages.dev.", CF_PROXY_ON),
-    CNAME("www", "thetanerd-com.pages.dev.", CF_PROXY_ON),
+    // Ghost Pro Blog
+    A("@", "178.128.137.126"),
+    CNAME("www", "theta-nerd.ghost.io."),
+    // Old Hugo CloudFlare Pages blog
+    CNAME("old", "thetanerd-com.pages.dev.", CF_PROXY_ON),
     TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
     TXT("@", "google-site-verification=mycVLMWJTjw_mHgmbZNISWAhPKpzBozyQpOHArhkUAY"),
     TXT("_dmarc", "v=DMARC1; p=none"),
