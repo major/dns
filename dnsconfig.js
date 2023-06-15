@@ -60,8 +60,8 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 
 D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     // Ghost Pro Blog
-    A("@", "178.128.137.126"),
-    CNAME("www", "theta-nerd.ghost.io."),
+    A("@", "5.161.127.225", CF_PROXY_ON),
+    A("www", "5.161.127.225", CF_PROXY_ON),
     // Old Hugo CloudFlare Pages blog
     CNAME("old", "thetanerd-com.pages.dev.", CF_PROXY_ON),
     TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
