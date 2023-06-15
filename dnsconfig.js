@@ -67,7 +67,15 @@ D("thetanerd.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
     TXT("@", "v=spf1 include:spf.messagingengine.com ~all"),
     TXT("@", "google-site-verification=mycVLMWJTjw_mHgmbZNISWAhPKpzBozyQpOHArhkUAY"),
     TXT("_dmarc", "v=DMARC1; p=none"),
-    FASTMAIL_RECORDS,
+    // Mailgun
+    TXT("smtp._domainkey.posts", "k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt02XptCGz6qdE2r5m9hh4RIWZqzVyTCym1gWsQ8uD0xKNmXNlkmk6eSg3ZkHDCbQwTPrUR8RFzFPe2NglDO7euwM2bSpppGEnigzUlIKtXTgpTZzVKTOXghixFkMtIrlJxSlgMacZVhUvx6siWPs1uS8exk2D6TXoWDISr6PN5AADdG518uVCjsvhvF0RSPPW7u4Bx6P1FP73Cuk/3unOxsXQ1PFHzzJ/YxfWHJGUfMGkkVmbeGpdDK0Tq05xy9TBlvHsYRyWO277jx32uoKQsiSQ3FFl25DdjWrO+v8mBO92dz4X8i3RgPXx+aK+3yK9Z1ZbHn43AY/7I6FdyzPBQIDAQAB"),
+    TXT("posts", "v=spf1 include:mailgun.org ~all"),
+    MX("posts", 10, "mxa.mailgun.org."),
+    MX("posts", 10, "mxb.mailgun.org."),
+    CNAME("email.posts", "mailgun.org."),
+    // Fastmail
+    MX('@', 10, 'in1-smtp.messagingengine.com.'),
+    MX('@', 20, 'in2-smtp.messagingengine.com.'),
     FASTMAIL_DKIM("thetanerd.com")
 );
 
