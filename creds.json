@@ -1,5 +1,7 @@
 {
-  "r53_main": {
-    "TYPE": "ROUTE53"
+  "cloudflare": {
+    "TYPE": "CLOUDFLAREAPI",
+    "accountid": "$CLOUDFLARE_ACCOUNT_ID",
+    "apitoken": "$CLOUDFLARE_API_TOKEN"
   }
 }
