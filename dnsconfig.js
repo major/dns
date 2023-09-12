@@ -1,5 +1,5 @@
 DEFAULTS(
-    DefaultTTL("300")
+    DefaultTTL("3600")
 );
 
 var REG_NONE = NewRegistrar("none");
