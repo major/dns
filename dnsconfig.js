@@ -86,9 +86,9 @@ D("mhtx.net", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
 //     SPF_NO_MX
 // );
 
-// D("w5wut.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
-//     A("@", "1.2.3.4", CF_PROXY_ON),
-//     A("*", "1.2.3.4", CF_PROXY_ON),
-//     CF_REDIRECT("*w5wut.com/*", "https://major.io/w5wut/"),
-//     SPF_NO_MX
-// );
+D("w5wut.com", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
+    A("@", "1.2.3.4", CF_PROXY_ON),
+    A("*", "1.2.3.4", CF_PROXY_ON),
+    CF_REDIRECT("*w5wut.com/*", "https://major.io/w5wut/"),
+    SPF_NO_MX
+);
