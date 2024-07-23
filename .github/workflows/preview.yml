@@ -15,7 +15,8 @@ jobs:
         uses: koenrh/dnscontrol-action@v3
         id: dnscontrol_preview
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PORKBUN_API_KEY: ${{ secrets.PORKBUN_API_KEY }}
+          PORKBUN_SECRET_KEY: ${{ secrets.PORKBUN_SECRET_KEY }}
         with:
           args: preview
 
