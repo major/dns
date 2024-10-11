@@ -21,7 +21,7 @@ jobs:
           args: preview
 
       - name: Preview pull request comment
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           message: |
             ```
